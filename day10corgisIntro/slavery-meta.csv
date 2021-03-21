@@ -1,0 +1,39 @@
+Name,Slavery,,,
+Version,3.0.0,,,
+Author,Anna Wu <annawu@udel.edu>,,,
+Created,3/18/2021,,,
+Data File,slavery-corgis.csv,,,
+Overview,1856-1861 financial records of slave sales collected from the office of the Orleans parish Civil Clerk of Court.",,,
+Data Source,Calomiris, Charles W., and Jonathan Pritchett. 2016. "Betting on Secession: Quantifying Political Events Surrounding Slavery and the Civil War." American Economic Review, 106(1): 1-23. <https://www.aeaweb.org/articles?id=10.1257/aer.20131483> ,,,
+Description,"This dataset holds financial records of 1856-1861 slave sales collected from the office of the Orleans parish Civil Clerk of Court. These data contain transaction dates and prices, buyer/seller information, as well as demographical information on the slaves.",,,
+Tags,"slavery, slave, slaves, buyer, seller, history, civil war, economics, slave trade, slave sales ",,,
+Row,Transaction record,,,
+Row Explanation, Each row is a transaction record of a slave sale,,,
+Acknowledgement,,,,
+Icon,slavery-icon.png,,,
+Splash,slavery-icon.png,,,
+Properties,Name,Type,Index,Description
+,Date.Full,string,TRUE,Full date of the transaction: yyyy-mm-dd
+,Date.Year,int,,Year the transaction was made.
+,Date.Month,int,,Month the transaction was made.
+,Date.Day,int,,Day the transaction was made.
+,Slave.Name,string,,Name of the slave associated with the sales transaction. (last name not usually recorded) 
+,Slave.Gender,string,,Gender: 'Male' or  'Female'. Often inferred from sale record (such as Negro vs. Negress, mulatto vs. mulattress)
+,Slave.Age,int,,Age in years.
+,Slave.Color,string,,Description of slave’s skin color, but may also indicate ancestry. May be 'Unknown'. 
+,Seller.Name,string,,Full name of seller. May be a company name.
+,Seller.Origin.County,string,,County that the seller originates from.
+,Seller.Origin.State,string,,State that the seller originates from.
+,Buyer.Name,string,,Full name of buyer. May be a company name.
+,Buyer.Origin.County,string,,County that the buyer originates from.
+,Buyer.Origin.State,string,,State that the buyer originates from.
+,Transaction.Price,float,,Price associated with the slaves. For group sales with a single price, only
+one price is listed for first slave.
+,Transaction.Payment Method,string,,Method of payment: one of 'Cash', 'Credit', 'Cash and Credit', or 'Unknown'
+,Transaction.Number of Total Slaves,int,,Total number of slaves listed in transaction.
+,Transaction.Number of Adult Slaves,int,,Total number of adults listed in transaction.
+,Transaction.Number of Child Slaves,int,,Total number of children listed in transaction.
+,Transaction.Number of Prices,int,,Total number of prices listed in transaction.
+,Transaction.Discount Rate,float,,Calculated monthly discount rate.
+,Transaction.Predicted Interest Rate,float,,Predicted monthly interest rate for credit sales without explicit
+interest rates.
