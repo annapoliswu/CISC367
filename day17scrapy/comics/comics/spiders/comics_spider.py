@@ -37,6 +37,6 @@ class QuotesSpider(scrapy.Spider):
         }
 
     """
-    Note, format after scraping. Cast on null or string cut on null, no yield output. Fill in when converting to CSV.
+    Note, format after scraping. Cast on null or string cut on null, no yield output. Fill in when converting to CSV?
 
     """
