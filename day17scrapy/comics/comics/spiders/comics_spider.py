@@ -23,17 +23,17 @@ class QuotesSpider(scrapy.Spider):
     def parse_follow(self, response):
         yield{
             'title' : response.css('h1::text').get(),
-            'description' : response.xpath('normalize-space(.//div[@class="productdescription"])').extract()[0],
+            'description' : response.xpath('normalize-space(.//div[@class="productdescription"])').extract_first(default=''),
             'price' : float(response.xpath("//div[@class='price']/text()").re(r'\d+.\d\d')[0]),
-            'pagecount' : response.css('div.pagecount::text').get(),
+            'pagecount' : response.xpath("//div[@class='pagecount']/text()").extract_first(default='').strip(),
             'publisher': response.css('div.publisher a::text').get(),
-            'writer': response.css('div.writer a::text').get(),
-            'artist': response.css('div.artist a::text').get(),
-            'coverartist' : response.css('div.coverartist::text').get(),
-            'productcode' : response.css('div.diamondcode::text').get(),
-            'upc' : response.css('div.upc::text').get(),
-            'color' : response.css('div.color::text').get(),
-            'format' : response.css('div.format::text').get()
+            'writer': response.xpath("//div[@class='writer']/a/text()").extract_first(default='').strip().title(),
+            'artist': response.xpath("//div[@class='artist']/a/text()").extract_first(default='').strip().title(),
+            'coverartist' : response.xpath("//div[@class='coverartist']/text()").extract_first(default='').strip().title(),
+            'productcode' : response.xpath("//div[@class='diamondcode']/text()").extract_first(default='').strip(),
+            'upc' : response.xpath("//div[@class='upc']/text()").extract_first(default='').strip(),
+            'color' : response.xpath("//div[@class='color']/text()").extract_first(default='').strip().title(),
+            'format' : response.xpath("//div[@class='format']/text()").extract_first(default='').strip().title(),
         }
 
     """
