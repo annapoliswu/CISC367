@@ -1,0 +1,4 @@
+Github link: https://github.com/annapoliswu/CISC367/tree/main/day17scrapy/comics
+Website scraped: https://www.instocktrades.com/publishers/dc
+Data description: 
+List of DC comics in stock / in stores as of 2021. Includes info about the comic, artists, writers, and product information. 
